@@ -1,0 +1,50 @@
+.story {
+  width: 75%;
+  padding: 6rem;
+  padding-left: 9rem;
+  transform: skewX(-12deg);
+  margin: 0 auto 6rem auto;
+  background-color: rgba($color-white, 0.6);
+
+  &__shape {
+    width: 15rem;
+    height: 15rem;
+    shape-outside: circle(50% at 50% 50%);
+    float: left;
+    clip-path: circle(50%);
+    transform: translateX(-3rem) skewX(12deg);
+  }
+
+  &__image {
+    height: 100%;
+    width: auto;
+    transform: translateX(-4rem) scale(1.4);
+    transition: all 0.5s;
+  }
+
+  &__text {
+    transform: skewX(12deg);
+  }
+
+  &__name {
+    @include vertical-horizontal-center;
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-white;
+    font-size: 1.7rem;
+    // overwriting the vertical-horizontal-center's transform for the animation
+    transform: translate(-50%, 20%) rotate(0deg);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+
+  &:hover &__name {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0.1deg);
+  }
+
+  &:hover &__image {
+    transform: translate(-4rem) scale(1);
+    filter: brightness(80%) blur(3px);
+  }
+}

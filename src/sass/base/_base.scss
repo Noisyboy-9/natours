@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; /*1rem = 10px*/
+}
+
+body {
+  box-sizing: border-box;
+}
+
+a:focus,
+a:hover,
+a:active {
+  outline: 0; /*removing the dotted border around the element in status change*/
+}

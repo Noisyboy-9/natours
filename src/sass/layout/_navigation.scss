@@ -1,0 +1,135 @@
+.navigation {
+  &__button {
+    display: inline-block;
+    width: 7rem;
+    height: 7rem;
+    background-color: $color-white;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 5;
+    top: 6rem;
+    right: 6rem;
+    box-shadow: 0 1rem 3rem rgba($color-black, 0.1);
+    cursor: pointer;
+    text-align: center;
+  }
+
+  &__background {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: fixed;
+    top: 6.5rem;
+    right: 6.5rem;
+    background: radial-gradient($color-primary-light, $color-primary-dark);
+    z-index: 3;
+    transition: all 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  }
+
+  &__nav {
+    // base styles
+    height: 100vh;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    // animation setup
+    width: 0;
+    opacity: 0;
+  }
+
+  &__list {
+    @include vertical-horizontal-center;
+    width: 100%;
+  }
+
+  &__item {
+    margin-bottom: 1rem;
+    list-style: none;
+  }
+
+  &__link {
+    &:link,
+    &:visited {
+      display: inline-block;
+      color: $color-white;
+      text-decoration: none;
+      font-size: 3rem;
+      font-weight: 300;
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      text-transform: uppercase;
+      background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+      background-size: 220%;
+      transition: all 0.4s;
+    }
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+      color: $color-primary;
+      transform: translateX(1rem);
+    }
+
+    span {
+      margin-right: 2rem;
+    }
+  }
+
+  &__icon {
+    position: relative;
+    margin-top: 3.4rem;
+
+    &,
+    &::after,
+    &::before {
+      display: inline-block;
+      width: 3rem;
+      height: 2px;
+      background-color: $color-grey-dark-2;
+    }
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      left: 0;
+      transition: all 0.2s;
+    }
+
+    &::before {
+      top: -0.8rem;
+    }
+
+    &::after {
+      top: 0.8rem;
+    }
+
+    &.navigation__icon--for-animation {
+      background-color: transparent;
+      &:after {
+        top: 0 !important; // adding !important because there is no other way to handle the hover when the button is clicked
+        transform: rotate(135deg);
+      }
+
+      &::before {
+        top: 0 !important; // adding !important because there is no other way to handle the hover when the button is clicked
+        transform: rotate(-135deg);
+      }
+    }
+  }
+
+  &__button:hover &__icon {
+    &::before {
+      top: -1rem;
+    }
+
+    &::after {
+      top: 1rem;
+    }
+  }
+}
