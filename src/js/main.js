@@ -1,5 +1,6 @@
 'use strict';
 import navigationShowAnimation from './lib/NavigationShowAnimation';
+import Popup from './lib/Popup';
 
 new navigationShowAnimation(
   '#navigation-nav',
@@ -7,3 +8,5 @@ new navigationShowAnimation(
   '#navigation-button',
   '#navigation-icon'
 );
+
+new Popup('#popup', '#popup-content', '#showPopupBtn', '#popup-close');

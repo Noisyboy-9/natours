@@ -98,6 +98,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/js/lib/Popup.js":
+/*!*****************************!*\
+  !*** ./src/js/lib/Popup.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Popup; });\n\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Popup =\n/*#__PURE__*/\nfunction () {\n  function Popup(popup, popupContent, openButtons, closeButton) {\n    _classCallCheck(this, Popup);\n\n    this._popup = document.querySelector(popup);\n    this._popupContent = document.querySelector(popupContent);\n    this._OpenButtons = document.querySelectorAll(openButtons);\n    this._closeButton = document.querySelector(closeButton);\n    this.buttonClickListener();\n  }\n\n  _createClass(Popup, [{\n    key: \"buttonClickListener\",\n    value: function buttonClickListener() {\n      var _this = this;\n\n      this._OpenButtons.forEach(function (openButton) {\n        openButton.addEventListener('click', function (event) {\n          event.preventDefault();\n\n          _this.showPopupBackground();\n\n          _this.showPopContent();\n        });\n      });\n    }\n  }, {\n    key: \"showPopupBackground\",\n    value: function showPopupBackground() {\n      this._popup.style.opacity = 1;\n      this._popup.style.visibility = 'visible';\n    }\n  }, {\n    key: \"showPopContent\",\n    value: function showPopContent() {\n      this._popupContent.style.transform = 'translate(-50%, -50%) scale(1)';\n      this._popupContent.style.opacity = 1;\n      this.setCloseListener();\n    }\n  }, {\n    key: \"setCloseListener\",\n    value: function setCloseListener() {\n      var _this2 = this;\n\n      this._closeButton.addEventListener('click', function (event) {\n        event.preventDefault();\n\n        _this2.closePopup();\n      });\n    }\n  }, {\n    key: \"closePopup\",\n    value: function closePopup() {\n      this._popupContent.style.transform = 'translate(-50%, -50%) scale(.25)';\n      this._popupContent.style.opacity = 0;\n      this._popup.style.opacity = 0;\n      this._popup.style.visibility = 'hidden';\n    }\n  }]);\n\n  return Popup;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/lib/Popup.js?");
+
+/***/ }),
+
 /***/ "./src/js/main.js":
 /*!************************!*\
   !*** ./src/js/main.js ***!
@@ -106,7 +118,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_NavigationShowAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/NavigationShowAnimation */ \"./src/js/lib/NavigationShowAnimation.js\");\n\n\n\nnew _lib_NavigationShowAnimation__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('#navigation-nav', '#navigation-background', '#navigation-button', '#navigation-icon');\n\n//# sourceURL=webpack:///./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _lib_NavigationShowAnimation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/NavigationShowAnimation */ \"./src/js/lib/NavigationShowAnimation.js\");\n/* harmony import */ var _lib_Popup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./lib/Popup */ \"./src/js/lib/Popup.js\");\n\n\n\n\nnew _lib_NavigationShowAnimation__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('#navigation-nav', '#navigation-background', '#navigation-button', '#navigation-icon');\nnew _lib_Popup__WEBPACK_IMPORTED_MODULE_1__[\"default\"]('#popup', '#popup-content', '#showPopupBtn', '#popup-close');\n\n//# sourceURL=webpack:///./src/js/main.js?");
 
 /***/ })
 

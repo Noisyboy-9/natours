@@ -1,7 +1,7 @@
 @mixin clearfix {
   &::after {
     display: table;
-    content: '';
+    content: "";
     clear: both;
   }
 }
@@ -21,4 +21,42 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/*
+  break points : 
+  - phone : 0 - 600
+  - tab-port : 600-900
+  -tab-land : 900-1200
+  [normal styles will apply to range 1200 - 1800]
+  -big-desktop : 1800 - infinity
+
+  making responsive order : 
+  base + typography > general layout + grid > page layout > components
+*/
+
+@mixin response($breakpoint) {
+  @if $breakpoint == big-desktop {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-land {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-port {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+    }
+  }
 }
