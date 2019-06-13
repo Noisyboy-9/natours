@@ -6,6 +6,13 @@
   margin: 0 auto 6rem auto;
   background-color: rgba($color-white, 0.6);
 
+  @include response(tab-port) {
+    width: 100%;
+  }
+  @include response(phone) {
+    transform: skewX(0);
+  }
+
   &__shape {
     width: 15rem;
     height: 15rem;
@@ -13,6 +20,13 @@
     float: left;
     clip-path: circle(50%);
     transform: translateX(-3rem) skewX(12deg);
+
+    @include response(phone) {
+      transform: translateX(-3rem) skewX(0deg);
+      shape-outside: none;
+      float: none;
+      margin: 0 auto 3rem auto;
+    }
   }
 
   &__image {
@@ -20,10 +34,19 @@
     width: auto;
     transform: translateX(-4rem) scale(1.4);
     transition: all 0.5s;
+
+    @include response(tab-land) {
+      transform: translate(-4rem) scale(1);
+      filter: brightness(80%) blur(3px);
+    }
   }
 
   &__text {
     transform: skewX(12deg);
+
+    @include response(phone) {
+      transform: skewX(0deg);
+    }
   }
 
   &__name {
@@ -36,6 +59,11 @@
     transform: translate(-50%, 20%) rotate(0deg);
     opacity: 0;
     transition: all 0.5s;
+
+    @include response(tab-land) {
+      opacity: 1;
+      transform: translate(-50%, -50%) rotate(0.1deg);
+    }
   }
 
   &:hover &__name {

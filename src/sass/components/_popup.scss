@@ -9,7 +9,13 @@
 
   opacity: 0;
   visibility: hidden;
-  // transition: all 0.3s;
+
+  @include response(tab-land) {
+    #popup-btn {
+      display: block;
+      text-align: center;
+    }
+  }
 
   &__content {
     width: 75%;
@@ -30,6 +36,11 @@
   &__left {
     width: 33.333%;
     display: table-cell;
+
+    @include response(tab-port) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -37,11 +48,22 @@
     padding: 3rem 5rem;
     display: table-cell;
     vertical-align: middle;
+
+    @include response(tab-port) {
+      width: 100%;
+      display: block;
+      vertical-align: none;
+    }
   }
 
   &__image {
     display: block;
     width: 100%;
+
+    @include response(tab-port) {
+      width: 49.5%;
+      display: inline-block;
+    }
   }
 
   &__paragraph {
@@ -52,6 +74,13 @@
     column-rule: 2px solid $color-grey-light-1;
 
     hyphens: auto;
+
+    @include response(phone) {
+      column-count: 1;
+      column-gap: 0rem;
+      column-rule: none;
+      hyphens: auto;
+    }
   }
 
   &:target {
@@ -75,6 +104,10 @@
     a {
       color: $color-grey-dark;
       text-decoration: none;
+
+      @include response(tab-port) {
+        color: $color-grey-dark-2;
+      }
 
       &:hover {
         color: $color-primary;

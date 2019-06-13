@@ -14,7 +14,7 @@ html {
   font-size: 62.5%; /*1rem = 10px*/
 
   @include response(tab-land) {
-    font-size: 56.25%; //1REM === 9px
+    font-size: 59.4%; //1REM === 9.5px
   }
 
   @include response(tab-port) {
@@ -30,6 +30,7 @@ body {
   box-sizing: border-box;
 
   padding: 3rem;
+
   @include response(tab-port) {
     padding: 0;
   }
