@@ -70,9 +70,19 @@
 
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__img composition__img--1">
-                        <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__img composition__img--2">
-                        <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__img composition__img--3">
+
+                        <img srcset="img/nat-1.jpg 300w,img/nat-1-large.jpg 1000w"
+                            sizes="(max-width:600px) 23vw, (max-width: 900px) 23vw , 297px" src="nat-2-large.jpg"
+                            alt="Photo 1" class="composition__img composition__img--1">
+
+                        <img srcset="img/nat-2.jpg 300w,img/nat-2-large.jpg 1000w"
+                            sizes="(max-width:600px) 23vw, (max-width: 900px) 23vw , 297px" src="nat-2-large.jpg"
+                            alt="Photo 2" class="composition__img composition__img--2">
+
+                        <img srcset="img/nat-3.jpg 300w,img/nat-3-large.jpg 1000w"
+                            sizes="(max-width:600px) 23vw, (max-width: 900px) 23vw , 297px" src="nat-3-large.jpg"
+                            alt="Photo 3" class="composition__img composition__img--3">
+
                     </div>
                 </div>
             </div>
@@ -336,7 +346,12 @@
 
     <footer class="footer">
         <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="LOGO" class="footer__logo">
+            <picture class="footer__logo">
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x"
+                    media="(max-width: 37.5em)">
+
+                <img src="img/logo-green-2x.png" srcset="img/logo-green-1x.png 1x,img/logo-green-2x.png 2x" alt="LOGO">
+            </picture>
         </div>
 
         <div class="row">
@@ -362,11 +377,13 @@
 
     <div class="popup" id="popup">
         <div class="popup__content" id="popup-content">
+
             <div class="popup__left">
                 <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__image">
                 <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__image">
             </div>
-            <div class="popup__right">
+
+            <div class=" popup__right">
                 <span class="popup__close" id="popup-close"><a href="#section-tours">&times;</a></span>
                 <h2 class="heading-secondary u-margin-bottom-small">start booking now</h2>
                 <h3 class="heading-tertiary u-margin-bottom-small">important &ndash; please read these terms before
@@ -377,7 +394,8 @@
                     nulla rem sequi dolor obcaecati optio placeat sint veritatis nisi tempore ullam, autem eaque ea
                     debitis praesentium officiis enim nemo voluptas. Id numquam fuga quibusdam quidem aperiam quod
                     sapiente, eum cumque tempora incidunt earum sit facilis rem. Exercitationem veniam pariatur sit!
-                    Dolorum dolore doloribus itaque facilis soluta reprehenderit, officiis id eos, magnam illum incidunt
+                    Dolorum dolore doloribus itaque facilis soluta reprehenderit, officiis id eos, magnam illum
+                    incidunt
                     necessitatibus harum pariatur autem laborum, quaerat quae quidem nisi nesciunt atque vero!
                     Cupiditate, et architecto, quo accusamus tempore rem doloribus, eligendi beatae at odio maiores
                     magni voluptatum! Doloribus minima vitae doloremque reprehenderit adipisci?
