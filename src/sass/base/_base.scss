@@ -41,3 +41,8 @@ a:hover,
 a:active {
   outline: 0; /*removing the dotted border around the element in status change*/
 }
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}

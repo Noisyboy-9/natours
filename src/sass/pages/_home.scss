@@ -7,23 +7,18 @@
     padding: 20rem 0;
   }
 
-  @media (width: 768px) {
+  @media only screen and (width: 768px) {
     padding-top: 30rem; //IPAD
   }
 
-  @media (width: 1024px) {
+  @media only screen and (width: 1024px) {
     padding-top: 30rem; // IPAD pro
   }
 }
 
 .section-features {
   padding: 20rem 0;
-  background: linear-gradient(
-      to right,
-      rgba($color-primary, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url('img/nat-4.jpg');
+  background: linear-gradient(to right, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)), url("img/nat-4.jpg");
   background-size: cover;
   margin-top: -10rem;
   transform: skewY(-7deg);
@@ -75,20 +70,11 @@
 
 .section-book {
   padding: 15rem 0;
-  background: linear-gradient(
-    to right bottom,
-    $color-primary-light,
-    $color-primary-dark
-  );
+  background: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
 
   .book {
-    background-image: linear-gradient(
-        105deg,
-        rgba($color-white, 0.9) 0%,
-        rgba($color-white, 0.9) 50%,
-        transparent 50%
-      ),
-      url('img/nat-10.jpg');
+    background-image: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 50%, transparent 50%),
+      url("img/nat-10.jpg");
     background-size: cover;
     border-radius: $border-radius-primary;
 
@@ -99,16 +85,12 @@
           rgba($color-white, 0.9) 60%,
           transparent 60%
         ),
-        url('img/nat-10.jpg');
+        url("img/nat-10.jpg");
     }
 
     @include response(tab-port) {
-      background-image: linear-gradient(
-          105deg,
-          rgba($color-white, 0.9) 0%,
-          rgba($color-white, 0.9) 100%
-        ),
-        url('img/nat-10.jpg');
+      background-image: linear-gradient(105deg, rgba($color-white, 0.9) 0%, rgba($color-white, 0.9) 100%),
+        url("img/nat-10.jpg");
     }
 
     &__form {
