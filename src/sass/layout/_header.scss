@@ -1,15 +1,41 @@
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
-    url("img/hero-small.jpg");
   background-size: cover;
   background-position: top;
+  // setting the background
 
-  @media (min-resolution: 192dpi) and (max-width: 37.5em), (min-width: 125em) {
+  // ---------------------------------------------normal screen --------------------------------------------------------------
+  background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
+    url("img/hero-normal-1x.jpg");
+
+  @media (min-resolution: 192dpi) {
     background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
-      url("img/hero.jpg");
+      url("img/hero-normal-2x.jpg");
   }
-  /* for the bottom right corner */
+
+  // ------------------------------------------------------- tab land ---------------------------------------------------------------
+  @media (max-width: 75em) {
+    // tab land with 1x display
+    background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
+      url("img/hero-tabLand-1x.jpg");
+  }
+  @media (max-width: 75em) and (min-resolution: 192dpi) {
+    // tab land with 2x display
+    background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
+      url("img/hero-tabLand-2x.jpg");
+  }
+  //---------------------------------------------------------tab port & phone ------------------------------------------------------------
+  @media (max-width: 56.25em) {
+    //tab port with 1x display
+    background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
+      url("img/hero-tabPort-1x.jpg");
+  }
+  @media (max-width: 56.25em) and (min-resolution: 192dpi) {
+    //tab port with 2x display
+    background-image: linear-gradient(to right bottom, rgba($color-primary, 0.8), rgba($color-primary-dark, 0.8)),
+      url("img/hero-tabPort-2x.jpg");
+  }
+
   clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
   position: relative;
 
